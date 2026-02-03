@@ -1,0 +1,310 @@
+Based on the document provided, here is the extracted text content organized by section and page.
+Hospital Management System
+[Page No.-09]
+INTRODUCTION
+The Hospital Management System (HMS) is a software solution designed to streamline hospital operations, improve patient care, and enhance the efficiency of medical staff. It automates key processes such as patient registration, appointment scheduling, billing, medical records management, and inventory control. This document outlines the system's requirements, ensuring clarity for stakeholders, developers, and end-users.
+PURPOSE
+The HMS aims to provide a centralized platform for hospitals to manage patient records, doctor appointments, billing, inventory, and administrative tasks efficiently. The system enhances data accuracy, reduces paperwork, and improves workflow by integrating various hospital departments into a unified digital framework.
+SCOPE
+Manages patient registration, appointments, and medical records.
+Enables doctors to access patient histories and prescribe treatments.
+Facilitates billing, insurance claims, and financial transactions.
+Handles inventory management for medicines and equipment.
+Provides an intuitive interface for hospital staff, reducing manual errors.
+Ensures data security and compliance with healthcare regulations.
+OVERALL DESCRIPTION
+PRODUCT PERSPECTIVE
+The HMS is a web-based or desktop application that integrates with existing hospital infrastructure. It connects different departments, ensuring seamless data flow and eliminating redundancies. The system interacts with external APIs for laboratory tests, insurance processing, and pharmacy management.
+SOFTWARE REQUIREMENTS
+Frontend:
+HTML, CSS, JavaScript (React.js, Angular, or Vue.js)
+[Page No.-10]
+Bootstrap or Tailwind CSS for responsive design
+API integration for seamless data exchange
+Backend:
+Server-side programming: Node.js (Express.js), Python (Django/Flask), or Java (Spring Boot)
+Database: MySQL, PostgreSQL, or MongoDB
+Authentication: JWT/OAuth for secure login
+APIs: RESTful APIs for communication between frontend and backend
+HARDWARE REQUIREMENTS
+Server with minimum 8GB RAM, 4-core processor, and 500GB SSD
+Workstations with 4GB RAM and 100GB storage
+High-speed internet connectivity for cloud-based implementation
+Barcode scanners for inventory tracking (if applicable)
+FUNCTIONAL REQUIREMENTS
+R.1: User Registration and Authentication
+R.1.1: Sign Up
+Description: Users must register before accessing the system. There are different types of users:
+Hospital Admin/Manager: Provides hospital name, address, phone number, and email.
+Doctors/Nurses: Provides personal details, specialization, and contact information.
+Patients: Provides personal details, medical history, and emergency contact.
+Input: User details as mentioned above.
+Output: A confirmation message, along with a unique User ID and password, sent via email.
+Processing: Validates the entered details. If errors are found, displays an error message; otherwise, generates and stores the credentials.
+R.1.2: Login
+Input: User enters User ID and password.
+[Page No.-11]
+Output: If credentials are correct, access is granted to the system.
+Processing: Verifies the credentials against the database. If invalid, displays an error message.
+R.2: Patient Management
+R.2.1: Patient Registration
+Description: New patients must be registered before booking an appointment.
+Input: Patient name, age, gender, address, contact, medical history, and emergency contact.
+Output: A unique Patient ID is assigned.
+Processing: Checks if the patient already exists; if not, stores their details.
+R.2.2: Appointment Scheduling
+Description: Patients can book appointments with doctors based on availability.
+Input: Select doctor, preferred date & time.
+Output: Confirmation of appointment or an alternate suggestion if the slot is unavailable.
+Processing: Checks doctor availability and updates the schedule accordingly.
+R.2.3: Medical Records Management
+Description: Doctors and authorized staff can access and update a patient's medical records.
+Input: Patient ID, diagnosis, prescriptions, test results.
+Output: Updated patient records.
+Processing: Ensures data is stored securely and is accessible only by authorized personnel.
+R.2.4: Billing and Payment
+Description: The system generates bills for consultations, treatments, and services.
+Input: Patient ID, services availed, insurance details.
+Output: Detailed invoice with payment options.
+Processing: Calculates total cost, applies insurance coverage if applicable.
+R.3: Doctor and Staff Management
+R.3.1: Manage Doctor Schedules
+Input: Doctor's available time slots, department, and specialization.
+Output: A schedule visible to patients for appointment booking.
+[Page No.-12]
+Processing: Updates doctor availability in real time.
+R.3.2: Assign Nurses to Patients
+Input: Select a nurse for a specific patient based on availability.
+Output: Notification sent to the assigned nurse.
+Processing: Checks nurse availability before assigning.
+R.4: Inventory and Pharmacy Management
+R.4.1: Manage Medicine Stock
+Description: The system tracks available medicines and notifies when stock is low.
+Input: Medicine name, quantity, expiry date.
+Output: Updated inventory status.
+Processing: Alerts admin if stock is below threshold.
+R.4.2: Issue Medicine to Patients
+Description: Doctors can prescribe and dispense medicines through the system.
+Input: Patient ID, prescribed medicine details.
+Output: Medicine issued confirmation.
+Processing: Checks if medicine is in stock before issuing.
+R.5: Reports and Analytics
+R.5.1: Generate Patient Reports
+Input: Select patient and report type (medical history, lab results, billing).
+Output: Printable/downloadable report.
+Processing: Retrieves and formats the required data.
+R.5.2: Generate Hospital Statistics
+Input: Select type of report (admissions, revenue, doctor performance).
+Output: Data visualization with graphs and tables.
+Processing: Aggregates data and generates insights.
+R.6: Emergency and Ambulance Management
+R.6.1: Emergency Case Registration
+Input: Emergency details (patient condition, location, contact).
+Output: Assigns an available doctor and emergency room.
+Processing: Sends alerts to the hospital staff.
+[Page No.-13]
+R.6.2: Ambulance Booking
+Input: Patient location, emergency level.
+Output: Confirmation of ambulance dispatch.
+Processing: Finds the nearest available ambulance and assigns it.
+R.7: Security and Access Control
+R.7.1: Role-Based Access
+Input: User role (Doctor, Nurse, Receptionist, Admin, Patient).
+Output: Access granted only to permitted functionalities.
+Processing: Enforces permissions based on user role.
+R.7.2: Audit Logs
+Input: System actions performed by users.
+Output: Log report for admin review.
+Processing: Records all user activities for security tracking.
+R.8: Notifications and Alerts
+R.8.1: Appointment Reminders
+Input: Patient appointment date & time.
+Output: SMS/Email reminder notification.
+Processing: Sends automatic reminders before appointments.
+R.8.2: Emergency Alerts
+Input: Emergency case details.
+Output: Urgent alert sent to hospital staff.
+Processing: Notifies emergency response team instantly.
+NON-FUNCTIONAL REQUIREMENTS
+Performance: The system should handle high concurrent users without lag.
+Security: Implements SSL encryption, data encryption, and role-based access control.
+Scalability: Supports multi-hospital management in case of expansion.
+Usability: User-friendly UI for hospital staff with minimal training.
+Reliability: 99.9% uptime with automated backups.
+Compliance: Adheres to HIPAA and GDPR for patient data protection.
+[Page No.-14]
+USER CHARACTERISTICS
+Doctors: Require quick access to patient records, prescriptions, and test reports.
+Nurses: Need access to patient vitals and treatment plans.
+Receptionists: Manage appointments, patient registration, and billing.
+Administrators: Oversee system operations, staff roles, and inventory.
+Patients: Access personal records, book appointments, and receive notifications.
+CONSTRAINTS
+Regulatory Compliance: Must meet healthcare standards (HIPAA, GDPR, etc.).
+Hardware Limitations: May require server upgrades for large hospitals.
+Internet Dependency: A cloud-based solution requires stable internet connectivity.
+Data Security: Strong measures needed to prevent unauthorized access.
+Integration Challenges: Compatibility with existing hospital software may require custom APIs.
+[Page No.-15]
+(Hand-drawn Level-0 Data Flow Diagram for HMS)
+Center Process: Hospital Management System (0)
+External Entity: Patient
+Flow: Information -> System
+Flow: System -> Medicines & Suggestions
+External Entity: Doctor
+Flow: System -> Registration case
+Flow: Prescription -> System
+[Page No.-16]
+(Hand-drawn Level-1 Data Flow Diagram for HMS)
+Entities: Patient, Doctor, Admin.
+Processes:
+0.1 Specify Symptoms
+0.2 View Disease
+0.3 Manage prescription on Test
+0.4 Bill Processing
+0.5 Monitor System
+Flows: I/O symptom, Availability, Disease (Found/Not Found), Valid/Invalid ID, Reports, Fees, Invoice, Medicines and Others, Modify, Search Disease.
+Online Shopping Management System
+[Page No.-17]
+INTRODUCTION
+The Online Shopping Management System (OSMS) is a web-based platform that allows customers to browse, select, and purchase products from various sellers. It provides a seamless shopping experience with features such as product search, cart management, secure payment processing, and order tracking. Additionally, sellers can list and manage their products, while admins oversee platform operations.
+PURPOSE
+The Online Shopping Management system aims to:
+Provide a user-friendly e-commerce platform for customers.
+Enable sellers to list and manage their products efficiently.
+Ensure secure payment processing and order tracking.
+Offer an intuitive admin panel for managing the marketplace.
+SCOPE
+Customers can register, browse products, add them to the cart, and place orders.
+Sellers can register, list products, manage inventory, and process orders.
+Admins oversee users, products, and transactions to maintain platform integrity.
+The system supports multiple payment methods, including credit/debit cards, UPI, and wallets.
+Secure authentication and authorization for different user roles.
+Order tracking and automated notifications for customers.
+OVERALL DESCRIPTION
+PRODUCT PERSPECTIVE
+The OSMS is an online marketplace that connects buyers and sellers. It includes a responsive web interface and a backend system for handling transactions, inventory, and user management.
+[Page No.-18]
+SOFTWARE REQUIREMENTS
+Frontend:
+HTML, CSS, JavaScript (React.js, Angular, or Vue.js)
+Bootstrap or Tailwind CSS for responsive design
+API integration for real-time updates
+Backend:
+Node.js (Express.js), Python (Django/Flask), or Java (Spring Boot)
+Database: MySQL, PostgreSQL, or MongoDB
+Authentication: JWT/OAuth for secure login
+Payment Integration: Razorpay, PayPal, Stripe APIs
+HARDWARE REQUIREMENTS
+Server: Minimum 8GB RAM, 4-core processor, 500GB SSD
+Client Devices: Desktop, laptop, tablet, or smartphone with internet access
+Internet: High-speed connection for seamless transactions
+FUNCTIONAL REQUIREMENTS
+R.1: User Registration and Authentication
+R.1.1: Sign Up
+Description: Users must register before accessing the system.
+Admin: Manages platform, users, and transactions.
+Sellers: List and manage their products.
+Customers: Browse, purchase, and review products.
+Input: Name, email, phone number, address, password.
+Output: Confirmation email with User ID and password.
+Processing: Validates details and securely stores credentials.
+R.1.2: Login
+Input: User ID and password.
+Output: Access granted if credentials are correct.
+Processing: Authenticates user details.
+[Page No.-19]
+R.2: Product Management
+R.2.1: Add Product (Seller/Admin)
+Input: Product name, category, price, description, images, stock.
+Output: Product successfully added.
+Processing: Stores product details in the database.
+R.2.2: Update Product
+Input: Modified product details.
+Output: Product details updated.
+Processing: Updates product information in the system.
+R.2.3: Delete Product
+Input: Product ID.
+Output: Product removed from the marketplace.
+Processing: Deletes product from the database.
+R.3: Shopping Cart and Wishlist
+R.3.1: Add to Cart
+Input: Select product and quantity.
+Output: Product added to the shopping cart.
+R.3.2: Remove from Cart
+Input: Select product from the cart.
+Output: Product removed from the cart.
+R.3.3: Save to Wishlist
+Input: Select product to save.
+Output: Product added to the wishlist for later purchase.
+R.4: Order Management
+R.4.1: Place Order
+Input: Cart items, delivery address, payment details.
+Output: Order confirmation message.
+R.4.2: Order Tracking
+Input: Order ID.
+Output: Current status of the order (Processing, Shipped, Delivered).
+[Page No.-20]
+R.4.3: Cancel Order
+Input: Order ID.
+Output: Order cancelled successfully.
+R.5: Payment and Billing
+R.5.1: Secure Payment Processing
+Input: Credit card, debit card, UPI, wallet details.
+Output: Payment confirmation.
+Processing: Securely processes transactions via integrated payment gateways.
+R.5.2: Invoice Generation
+Input: Order details.
+Output: Downloadable PDF invoice.
+R.6: User Reviews and Ratings
+R.6.1: Submit Review
+Input: Rating (1-5 stars), text review.
+Output: Review published.
+R.6.2: View Reviews
+Input: Product ID.
+Output: Display list of reviews for the product.
+R.7: Admin Management
+R.7.1: Manage Users
+Input: Add, update, or remove user accounts.
+Output: Updated user list.
+R.7.2: Generate Sales Reports
+Input: Timeframe selection.
+Output: Sales insights and analytics.
+NON-FUNCTIONAL REQUIREMENTS
+Performance: System should handle at least 1000 concurrent users.
+Security: Implements SSL encryption, OTP verification, and data encryption.
+Scalability: Supports new sellers and product expansions.
+[Page No.-21]
+Usability: Simple, intuitive UI for smooth navigation.
+Reliability: Ensures 99.9% uptime.
+Compliance: Adheres to PCI-DSS for secure payments.
+USER CHARACTERISTICS
+Customers: Individuals looking to purchase products.
+Sellers: Businesses managing their product listings.
+Admins: Responsible for maintaining platform integrity.
+CONSTRAINTS
+Data Privacy: Must comply with GDPR and data protection laws.
+Internet Dependency: Online platform requires continuous internet access.
+Payment Gateway Fees: Transaction costs apply for payments.
+High Traffic Load: System must handle peak shopping periods.
+[Page No.-22]
+(Hand-drawn Level-0 Data Flow Diagram for OSMS)
+Center Process: Online Shopping Management System (0)
+External Entity: Customer
+Flow: Search Products/Place Order/Make Payment -> System
+Flow: System -> Show Product List/Order Confirmation
+External Entity: Admin
+Flow: System -> Sales Reports/Inventory update
+Flow: Manage Products/Update Inventory -> System
+External Entity: Payment Gateway
+Flow: System -> Send Payment Request
+Flow: Payment Confirmation -> System
+[Page No.-23]
+(Hand-drawn Level-1 Data Flow Diagram for OSMS)
+Entities: Customer, Admin.
+Databases: Product Database, Order Database, Payment Database.
+Processes:
+0.1 Browse & Select Products
+0.2 Place Order & Process Payment
+0.3 Manage Inventory
+Flows: Order & Payment Details, Search Products, Fetch Products Details, Order & Payment Confirmation, Show Products, Save Payment Transaction, Confirm Payment, Save Order, Update Product Info.
